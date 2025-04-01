@@ -65,3 +65,14 @@ namespace ConsoleApp4
         }
     }
 }
+
+
+/*
+ * DeliverySystem/Cargo Management
+ * 
+ * Vehicle
+ * Ship
+ * Flight  -> 1000 rs per kg, distance - 100rs per km
+ * Truck
+ * 
+ */
