@@ -1,0 +1,109 @@
+﻿public interface IVehicle
+{
+    void Start();
+    void Accelerate();
+    void Stop();
+}
+
+public class Car : IVehicle
+{
+    public void Start()
+    {
+        // Car-specific implementation of Start()
+    }
+
+    public void Accelerate()
+    {
+        // Car-specific implementation of Accelerate()
+    }
+
+    public void Stop()
+    {
+        // Car-specific implementation of Stop()
+    }
+}
+
+public class Motorcycle : IVehicle
+{
+    public void Start()
+    {
+        // Motorcycle-specific implementation of Start()
+    }
+
+    public void Accelerate()
+    {
+        // Motorcycle-specific implementation of Accelerate()
+    }
+
+    public void Stop()
+    {
+        // Motorcycle-specific implementation of Stop()
+    }
+}
+
+
+
+
+
+
+public class Driver
+{
+    private Car car;
+    private Motorcycle motorcycle;
+
+    public Driver()
+    {
+        this.car = new Car();
+        this.motorcycle = new Motorcycle();
+    }
+
+    public void DriveCar()
+    {
+        car.Start();
+        car.Accelerate();
+        // Other car-related operations
+        car.Stop();
+    }
+
+    public void RideMotorcycle()
+    {
+        motorcycle.Start();
+        motorcycle.Accelerate();
+        // Other motorcycle-related operations
+        motorcycle.Stop();
+    }
+}
+
+
+
+
+public class Driver
+{
+    private IVehicle vehicle;
+
+    public Driver(IVehicle vehicle)
+    {
+        this.vehicle = vehicle;
+    }
+
+    public void Drive()
+    {
+        vehicle.Start();
+        vehicle.Accelerate();
+        // Other vehicle-related operations
+        vehicle.Stop();
+    }
+}
+
+
+
+IVehicle car = new Car();
+IVehicle motorcycle = new Motorcycle();
+
+Driver driver = new Driver(car);
+driver.Drive();
+
+// ...
+
+driver = new Driver(motorcycle);
+driver.Drive();
