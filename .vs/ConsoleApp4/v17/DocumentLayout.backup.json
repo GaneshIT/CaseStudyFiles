@@ -1,13 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\GanesanPerumalsamy(T\\source\\repos\\ConsoleApp4\\",
+  "WorkspaceRootPath": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\source\\repos\\consoleapp4\\consoleapp4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\documents\\casestudydocs\\casestudyfiles\\consoleapp4\\builderdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\builderdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\documents\\casestudydocs\\casestudyfiles\\consoleapp4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\source\\repos\\consoleapp4\\consoleapp4\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\documents\\casestudydocs\\casestudyfiles\\consoleapp4\\textfile1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\textfile1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\documents\\casestudydocs\\casestudyfiles\\consoleapp4\\prototypedesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\prototypedesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\documents\\casestudydocs\\casestudyfiles\\consoleapp4\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\documents\\casestudydocs\\casestudyfiles\\consoleapp4\\ireport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\ireport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|c:\\users\\ganesanperumalsamy(t\\documents\\casestudydocs\\casestudyfiles\\consoleapp4\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29303717-E00A-4FC7-934D-A16EA8C7251F}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,34 +38,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\source\\repos\\ConsoleApp4\\ConsoleApp4\\Class1.cs",
-              "RelativeDocumentMoniker": "ConsoleApp4\\Class1.cs",
-              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\source\\repos\\ConsoleApp4\\ConsoleApp4\\Class1.cs",
-              "RelativeToolTip": "ConsoleApp4\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "BuilderDesign.cs",
+              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\BuilderDesign.cs",
+              "RelativeDocumentMoniker": "ConsoleApp4\\BuilderDesign.cs",
+              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\BuilderDesign.cs",
+              "RelativeToolTip": "ConsoleApp4\\BuilderDesign.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wBYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T21:12:15.467Z",
+              "WhenOpened": "2025-04-02T05:15:44.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Bank.cs",
+              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\Bank.cs",
+              "RelativeDocumentMoniker": "ConsoleApp4\\Bank.cs",
+              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\Bank.cs",
+              "RelativeToolTip": "ConsoleApp4\\Bank.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAIA0wEoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:01:56.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrototypeDesign.cs",
+              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\PrototypeDesign.cs",
+              "RelativeDocumentMoniker": "ConsoleApp4\\PrototypeDesign.cs",
+              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\PrototypeDesign.cs",
+              "RelativeToolTip": "ConsoleApp4\\PrototypeDesign.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T04:39:13.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TextFile1.txt",
+              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\TextFile1.txt",
+              "RelativeDocumentMoniker": "ConsoleApp4\\TextFile1.txt",
+              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\TextFile1.txt",
+              "RelativeToolTip": "ConsoleApp4\\TextFile1.txt",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAIwIkBAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-04-02T04:06:20.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IReport.cs",
+              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\IReport.cs",
+              "RelativeDocumentMoniker": "ConsoleApp4\\IReport.cs",
+              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\IReport.cs",
+              "RelativeToolTip": "ConsoleApp4\\IReport.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAlwDYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T11:25:41.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\Class1.cs",
+              "RelativeDocumentMoniker": "ConsoleApp4\\Class1.cs",
+              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\Class1.cs",
+              "RelativeToolTip": "ConsoleApp4\\Class1.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAEUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T21:12:15.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\source\\repos\\ConsoleApp4\\ConsoleApp4\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp4\\Program.cs",
-              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\source\\repos\\ConsoleApp4\\ConsoleApp4\\Program.cs",
+              "ToolTip": "C:\\Users\\GanesanPerumalsamy(T\\Documents\\Casestudydocs\\CaseStudyFiles\\ConsoleApp4\\Program.cs",
               "RelativeToolTip": "ConsoleApp4\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAowF0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T21:11:38.903Z",
               "EditorCaption": ""
