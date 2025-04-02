@@ -107,3 +107,293 @@ driver.Drive();
 
 driver = new Driver(motorcycle);
 driver.Drive();
+
+
+
+
+***********prototype design************
+namespace PrototypeDesignPattern
+{
+    //The Prototype Abstract Class
+    //This is an abstract class which is used for the types of object that can be cloned itself.
+    public abstract class Employee
+    {
+        public string Name { get; set; }
+        public string Department { get; set; }
+        public string Type { get; set; }
+
+        public abstract Employee GetClone();
+        public abstract void ShowDetails();
+    }
+}
+
+
+using System;
+namespace PrototypeDesignPattern
+{
+    //This is a class that implements the Prototype interface for cloning itself.
+    public class PermanentEmployee : Employee
+    {
+        public int Salary { get; set; }
+        public override Employee GetClone()
+        {
+            // MemberwiseClone Method Creates a shallow copy of the current System.Object
+            // So typecast the Object Appropriate Type
+            // In this case, typecast to PermanentEmployee type
+            return (PermanentEmployee)this.MemberwiseClone();
+        }
+
+        public override void ShowDetails()
+        {
+            Console.WriteLine("Permanent Employee");
+            Console.WriteLine($" Name:{this.Name}, Department: {this.Department}, Type:{this.Type}, Salary: {this.Salary}\n");
+        }
+    }
+}
+
+
+
+using System;
+namespace PrototypeDesignPattern
+{
+    //This is a class that implements the Prototype interface for cloning itself.
+    public class TemporaryEmployee : Employee
+    {
+        public int FixedAmount { get; set; }
+        public override Employee GetClone()
+        {
+            // MemberwiseClone Method Creates a shallow copy of the current System.Object
+            // So typecast the Object Appropriate Type
+            // In this case, typecast to TemporaryEmployee type
+            return (TemporaryEmployee)this.MemberwiseClone();
+        }
+
+        public override void ShowDetails()
+        {
+            Console.WriteLine("Temporary Employee");
+            Console.WriteLine($" Name:{this.Name}, Department: {this.Department}, Type:{this.Type}, FixedAmount: {this.FixedAmount}\n");
+        }
+    }
+}
+
+
+using System;
+namespace PrototypeDesignPattern
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Creating an Instance of Permanent Employee Class
+            Employee emp1 = new PermanentEmployee()
+            {
+                Name = "Anurag",
+                Department = "IT",
+                Type = "Permanent",
+                Salary = 100000
+            };
+
+            //Creating a Clone of the above Permanent Employee
+            Employee emp2 = emp1.GetClone();
+
+            // Changing the Name and Department Property Value of emp2 instance, 
+            // will not change the Name and Department Property Value of the emp1 instance
+            emp2.Name = "Pranaya";
+            emp2.Department = "HR";
+            emp1.ShowDetails();
+            emp2.ShowDetails();
+
+            // Creating an Instance of Temporary Employee Class
+            Employee emp3 = new TemporaryEmployee()
+            {
+                Name = "Preety",
+                Department = "HR",
+                Type = "Temporary",
+                FixedAmount = 200000
+            };
+
+            //Creating a Clone of the above Temporary Employee
+            Employee emp4 = emp3.GetClone();
+
+            // Changing the Name and Department Property Value of emp4 instance, 
+            // will not change the Name and Department Property Value of the emp3 instance
+            emp4.Name = "Priyanka";
+            emp4.Department = "Sales";
+            emp3.ShowDetails();
+            emp4.ShowDetails();
+            
+            Console.Read();
+        }
+    }
+}
+
+
+
+*********builder design
+using System;
+namespace BuilderDesignPattern
+{
+    // It makes sense to use the Builder Design Pattern only 
+    // when your products are quite complex 
+    // and require extensive configuration.
+    // Using the following Report Product class, we can configure different types of Product
+    public class Report
+    {
+        public string ReportType { get; set; }
+        public string ReportHeader { get; set; }
+        public string ReportFooter { get; set; }
+        public string ReportContent { get; set; }
+
+        public void DisplayReport()
+        {
+            Console.WriteLine("Report Type :" + ReportType);
+            Console.WriteLine("Header :" + ReportHeader);
+            Console.WriteLine("Content :" + ReportContent);
+            Console.WriteLine("Footer :" + ReportFooter);
+        }
+    }
+}
+
+
+
+
+namespace BuilderDesignPattern
+{
+    // The Builder Abstract Class specifies methods for creating the different parts
+    // of the Product objects.
+    public abstract class ReportBuilder
+    {
+        protected Report reportObject;
+
+        public abstract void SetReportType();
+        public abstract void SetReportHeader();
+        public abstract void SetReportContent();
+        public abstract void SetReportFooter();
+
+        public void CreateNewReport()
+        {
+            reportObject = new Report();
+        }
+
+        public Report GetReport()
+        {
+            return reportObject;
+        }
+    }
+}
+
+
+
+namespace BuilderDesignPattern
+{
+    // The Following Concrete Builder Implementd the ReportBuilder Abstract Class and 
+    // provide specific implementations of the steps for Creating ExcelReport. 
+    public class ExcelReport : ReportBuilder
+    {
+        public override void SetReportContent()
+        {
+            reportObject.ReportContent = "Excel Content Section";
+        }
+
+        public override void SetReportFooter()
+        {
+            reportObject.ReportFooter = "Excel Footer";
+        }
+
+        public override void SetReportHeader()
+        {
+            reportObject.ReportHeader = "Excel Header";
+        }
+
+        public override void SetReportType()
+        {
+            reportObject.ReportType = "Excel";
+        }
+    }
+}
+
+
+
+namespace BuilderDesignPattern
+{
+    // The Following Concrete Builder Implementd the ReportBuilder Abstract Class and 
+    // provide specific implementations of the steps for Creating PDFReport. 
+    public class PDFReport : ReportBuilder
+    {
+        public override void SetReportContent()
+        {
+            reportObject.ReportContent = "PDF Content Section";
+        }
+
+        public override void SetReportFooter()
+        {
+            reportObject.ReportFooter = "PDF Footer";
+        }
+
+        public override void SetReportHeader()
+        {
+            reportObject.ReportHeader = "PDF Header";
+        }
+
+        public override void SetReportType()
+        {
+            reportObject.ReportType = "PDF";
+        }
+    }
+}
+
+
+
+namespace BuilderDesignPattern
+{
+    // The Director is only responsible for executing the building steps in a particular order. 
+    // It is helpful when producing products according to a specific order or configuration. 
+    public class ReportDirector
+    {
+        public Report MakeReport(ReportBuilder reportBuilder)
+        {
+            reportBuilder.CreateNewReport();
+            reportBuilder.SetReportType();
+            reportBuilder.SetReportHeader();
+            reportBuilder.SetReportContent();
+            reportBuilder.SetReportFooter();
+
+            return reportBuilder.GetReport();
+        }
+    }
+}
+
+
+using System;
+namespace BuilderDesignPattern
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Constructing the PDF Report
+            // Step1: Create a Builder Object 
+            // Creating PDFReport Builder Object
+            PDFReport pdfReport = new PDFReport();
+
+            // Step2: Pass the Builder Object to the Director
+            // First Create an instance of ReportDirector
+            ReportDirector reportDirector = new ReportDirector();
+            // Then Pass the pdfReport Builder Object to the MakeReport Method of ReportDirector
+            // The ReportDirector will return one of the Representations of the Product
+            Report report = reportDirector.MakeReport(pdfReport);
+
+            // Step3: Display the Report by calling the DisplayReport method of the Product
+            report.DisplayReport();
+
+            Console.WriteLine("-------------------");
+            // Constructing the Excel Report
+            // The Process is going to be the same
+            ExcelReport excelReport = new ExcelReport();
+            report = reportDirector.MakeReport(excelReport);
+            report.DisplayReport();
+
+            Console.ReadKey();
+        }
+    }
+}

@@ -68,11 +68,11 @@ namespace ConsoleApp4
         void Gold();
         void Silver();
     }
-    public interface IPCustomer
-    {
-        void Platinum();
-        void Silver();
-    }
+    //public interface IPCustomer
+    //{
+    //    void Platinum();
+    //    void Silver();
+    //}
     public class Airtel : IPCustomer
     {
         public void Gold()

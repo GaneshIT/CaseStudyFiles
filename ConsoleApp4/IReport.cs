@@ -47,12 +47,12 @@ namespace ConsoleApp4
         {
 
         }
-        public Documents(IReport report,ICustomer)
-        {
-            _report = report;
-            //_excelDoc = excelDoc;
-            //_wordDoc = wordDoc;
-        }
+        //public Documents(IReport report,ICustomer)
+        //{
+        //    _report = report;
+        //    //_excelDoc = excelDoc;
+        //    //_wordDoc = wordDoc;
+        //}
         public void Airtel()
         {
             _report.DownloadReport();
