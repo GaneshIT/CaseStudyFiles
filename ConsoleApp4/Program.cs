@@ -1,5 +1,7 @@
 ﻿using ConsoleApp4;
 
+#region demo
+
 //int[] nums = { 2, 7, 11, 15 };
 //int target = 9;
 //int[] result = Class1.TwoSum(nums, target);
@@ -7,8 +9,6 @@
 
 //Console.WriteLine(Class1.IsValid("([{)]}")); // Output: True
 //Console.WriteLine(Class1.IsValid("(]")); // Output: False
-
-
 int[] arr = { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
 int k = 4;
 int n = arr.Length;
@@ -32,6 +32,8 @@ Console.WriteLine(Class1.maxSum(arr, n, k));
 ////Container<IReport, WordDoc>();
 //Documents documents=new Documents(_wordReport);
 //documents.Airtel();
+
+#endregion
 
 #region prototype
 // Creating an Instance of Permanent Employee Class
@@ -82,27 +84,27 @@ Console.WriteLine(Class1.maxSum(arr, n, k));
 #endregion
 
 #region builder
-//// Constructing the PDF Report
-//// Step1: Create a Builder Object 
-//// Creating PDFReport Builder Object
-//PDFReport pdfReport = new PDFReport();
+// Constructing the PDF Report
+// Step1: Create a Builder Object 
+// Creating PDFReport Builder Object
+PDFReport pdfReport = new PDFReport();
 
-//// Step2: Pass the Builder Object to the Director
-//// First Create an instance of ReportDirector
-//ReportDirector reportDirector = new ReportDirector();
-//// Then Pass the pdfReport Builder Object to the MakeReport Method of ReportDirector
-//// The ReportDirector will return one of the Representations of the Product
-//Report report = reportDirector.MakeReport(pdfReport);
+// Step2: Pass the Builder Object to the Director
+// First Create an instance of ReportDirector
+ReportDirector reportDirector = new ReportDirector();
+// Then Pass the pdfReport Builder Object to the MakeReport Method of ReportDirector
+// The ReportDirector will return one of the Representations of the Product
+Report report = reportDirector.MakeReport(pdfReport);
 
-//// Step3: Display the Report by calling the DisplayReport method of the Product
-//report.DisplayReport();
+// Step3: Display the Report by calling the DisplayReport method of the Product
+report.DisplayReport();
 
-//Console.WriteLine("-------------------");
-//// Constructing the Excel Report
-//// The Process is going to be the same
-//ExcelReport excelReport = new ExcelReport();
-//report = reportDirector.MakeReport(excelReport);
-//report.DisplayReport();
+Console.WriteLine("-------------------");
+// Constructing the Excel Report
+// The Process is going to be the same
+ExcelReport excelReport = new ExcelReport();
+report = reportDirector.MakeReport(excelReport);
+report.DisplayReport();
 #endregion
 
 #region adapter
@@ -136,8 +138,44 @@ samsungRemoteControl.SetChannel(202);
 samsungRemoteControl.SwitchOff();
 #endregion
 
+#region decorator
+//Create an instance of Concrete Component BMWCar
+ICar bmwCar1 = new BMWCar();
+//Calling the ManufactureCar method will create the BMWCar without an engine
+bmwCar1.ManufactureCar();
+Console.WriteLine(bmwCar1 + "\n");
+//Adding Diesel Engine to the bmwCar1
+//Create an instance DieselCarDecorator class and 
+//pass existing bmwCar1 as an argument to the Constructor which we want to decorate
+DieselCarDecorator carWithDieselEngine = new DieselCarDecorator(bmwCar1);
+//Calling the ManufactureCar method on the carWithDieselEngine object will add Diesel Engine to the bmwCar1 car
+carWithDieselEngine.ManufactureCar();
+Console.WriteLine();
+//The Process is the same for adding Petrol Engine to the existing Car
+ICar bmwCar2 = new BMWCar();
+PetrolCarDecorator carWithPetrolEngine = new PetrolCarDecorator(bmwCar2);
+carWithPetrolEngine.ManufactureCar();
+#endregion
 
-int a = 10;
-object b = a;
+#region proxy
 
-string c = b;
+Console.WriteLine("Client passing employee with Role Developer to folderproxy");
+Empl emp1 = new Empl("Anurag", "Anurag123", "Developer");
+SharedFolderProxy folderProxy1 = new SharedFolderProxy(emp1);
+folderProxy1.PerformRWOperations();
+Console.WriteLine();
+Console.WriteLine("Client passing employee with Role Manager to folderproxy");
+Empl emp2 = new Empl("Pranaya", "Pranaya123", "Manager");
+SharedFolderProxy folderProxy2 = new SharedFolderProxy(emp2);
+folderProxy2.PerformRWOperations();
+#endregion
+
+#region facade
+//The Client will use the Facade Interface instead of the Subsystems
+Order order = new Order();
+order.PlaceOrder();
+Console.Read();
+#endregion
+
+//var 
+//dynamic
