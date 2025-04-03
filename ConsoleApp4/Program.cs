@@ -1,4 +1,5 @@
 ﻿using ConsoleApp4;
+using ConsoleApp4.StructureDesign;
 
 #region demo
 
@@ -177,5 +178,111 @@ order.PlaceOrder();
 Console.Read();
 #endregion
 
-//var 
-//dynamic
+#region flyweight
+//Creating Circle Objects with Red Color
+Console.WriteLine("\n Red color Circles ");
+for (int i = 0; i < 3; i++)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Red");
+    circle.Draw();
+}
+//Creating Circle Objects with Green Color
+Console.WriteLine("\n Green color Circles ");
+for (int i = 0; i < 3; i++)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Green");
+    circle.Draw();
+}
+//Creating Circle Objects with Blue Color
+Console.WriteLine("\n Blue color Circles");
+for (int i = 0; i < 3; ++i)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Green");
+    circle.Draw();
+}
+//Creating Circle Objects with Orange Color
+Console.WriteLine("\n Orange color Circles");
+for (int i = 0; i < 3; ++i)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Orange");
+    circle.Draw();
+}
+//Creating Circle Objects with Black Color
+Console.WriteLine("\n Black color Circles");
+for (int i = 0; i < 3; ++i)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Black");
+    circle.Draw();
+}
+#endregion
+
+#region chain
+ATM atm = new ATM();
+Console.WriteLine("Requested Amount 4600");
+atm.Withdraw(4600);
+Console.WriteLine("\nRequested Amount 1900");
+atm.Withdraw(1900);
+Console.WriteLine("\nRequested Amount 600");
+atm.Withdraw(600);
+Console.WriteLine("\nRequested Amount 750");
+atm.Withdraw(750);
+#endregion
+
+#region command
+//Create an Instance of Receiver
+Document document = new Document();
+//Create the Command Object by passing the Receiver Instance
+ICommand openCommand = new OpenCommand(document);
+ICommand saveCommand = new SaveCommand(document);
+ICommand closeCommand = new CloseCommand(document);
+//Create the Invoker instance by passing the command objects
+MenuOptions menu = new MenuOptions(openCommand, saveCommand, closeCommand);
+//Giving command to the Invoker to do the operation
+menu.ClickOpen();
+menu.ClickSave();
+menu.ClickClose();
+#endregion
+
+#region interpreter
+
+//The following is going to be our Expression Tree
+List<IExpression> objExpressions = new List<IExpression>();
+//Creating the context object by passing the current date-time value
+Context context = new Context(DateTime.Now);
+//We want to Interpret the current date time as a specific format
+//Ask the user to select the format
+Console.WriteLine("Please Select the Expression  : MM DD YYYY or YYYY MM DD or DD MM YYYY ");
+context.Expression = Console.ReadLine();
+//Split Expression which the user selects to an array so that we can apply different Expression rules
+string[] strArray = context.Expression.Split(' ');
+//Looping through Each Element of the Expression and adding the Appropriate Expression with the Expression Tree
+foreach (var item in strArray)
+{
+    if (item == "DD")
+    {
+        objExpressions.Add(new DayExpression());
+    }
+    else if (item == "MM")
+    {
+        objExpressions.Add(new MonthExpression());
+    }
+    else if (item == "YYYY")
+    {
+        objExpressions.Add(new YearExpression());
+    }
+}
+//Adding the SeparatorExpression
+objExpressions.Add(new SeparatorExpression());
+foreach (var obj in objExpressions)
+{
+    //Finally Evaluate Each Expression which is added in the Expression Tree
+    obj.Evaluate(context);
+}
+//Print the Expression as Output
+Console.WriteLine(context.Expression);
+#endregion
