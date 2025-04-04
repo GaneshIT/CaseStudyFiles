@@ -1,4 +1,5 @@
 ﻿using ConsoleApp4;
+using ConsoleApp4.BehavioralDesign;
 using ConsoleApp4.StructureDesign;
 
 #region demo
@@ -286,3 +287,205 @@ foreach (var obj in objExpressions)
 //Print the Expression as Output
 Console.WriteLine(context.Expression);
 #endregion
+
+#region Iterator
+// Build a collection
+ConcreteCollection collection = new ConcreteCollection();
+collection.AddEmployee(new Elempoyee("Anurag", 100));
+collection.AddEmployee(new Elempoyee("Pranaya", 101));
+collection.AddEmployee(new Elempoyee("Santosh", 102));
+collection.AddEmployee(new Elempoyee("Priyanka", 103));
+collection.AddEmployee(new Elempoyee("Abinash", 104));
+collection.AddEmployee(new Elempoyee("Preety", 105));
+
+// Create iterator
+Iterator iterator = collection.CreateIterator();
+//looping iterator      
+Console.WriteLine("Iterating over collection:");
+
+for (Elempoyee emp = iterator.First(); !iterator.IsCompleted; emp = iterator.Next())
+{
+    Console.WriteLine($"ID : {emp.ID} & Name : {emp.Name}");
+}
+#endregion
+
+#region mediator
+//Create an Instance of Mediator i.e. Creating a Facebook Group
+IFacebookGroupMediator facebookMediator = new ConcreteFacebookGroupMediator();
+//Create instances of Colleague i.e. Creating users
+User Ram = new ConcreteUser("Ram");
+User Dave = new ConcreteUser("Dave");
+User Smith = new ConcreteUser("Smith");
+User Rajesh = new ConcreteUser("Rajesh");
+User Sam = new ConcreteUser("Sam");
+User Pam = new ConcreteUser("Pam");
+User Anurag = new ConcreteUser("Anurag");
+User John = new ConcreteUser("John");
+//Registering the users with the Mediator i.e. Facebook Group
+facebookMediator.RegisterUser(Ram);
+facebookMediator.RegisterUser(Dave);
+facebookMediator.RegisterUser(Smith);
+facebookMediator.RegisterUser(Rajesh);
+facebookMediator.RegisterUser(Sam);
+facebookMediator.RegisterUser(Pam);
+facebookMediator.RegisterUser(Anurag);
+facebookMediator.RegisterUser(John);
+//One of the users Sending one Message in the Facebook Group
+Dave.Send("dotnettutorials.net - this website is very good to learn Design Pattern");
+Console.WriteLine();
+//Another user Sending another Message in the Facebook Group
+Rajesh.Send("What is Design Patterns? Please explain ");
+#endregion
+
+#region memento
+//Creating an Instance of the Originator and setting the current state as a 42-Inch Led TV
+Originator originator = new Originator
+{
+    LedTV = new LEDTV("42-Inch", "60000", false)
+};
+//Storing the Internal State (Memento i.e. the Current Led TV) of the Originator in the Caretaker i.e. Store Room
+//First, Create an instance of the Caretaker
+Caretaker caretaker = new Caretaker();
+//Second Create a snapshot or memento of the current internal state of the originator
+Memento memento = originator.CreateMemento();
+//Third, store the memento or snapshot in the store room i.e. Caretaker
+caretaker.AddMemento(memento);
+//Changing the Originator Current State to 46-Inch
+originator.LedTV = new LEDTV("46-Inch", "80000", true);
+//Again storing the Internal State (Memento) of the Originator in the Caretaker i.e. Store Room
+//Create the memento or snapshot of the current internal state of the originator
+memento = originator.CreateMemento();
+//Store the memento in the Caretaker
+caretaker.AddMemento(memento);
+//Again, Changing the Originator Current State to 50-Inch
+originator.LedTV = new LEDTV("50-Inch", "100000", true);
+//The Current State of the Originator is now 50-Inch Led TV
+Console.WriteLine("\nOrignator Current State : " + originator.GetDetails());
+//Restoring the Originator to one of its previous states
+//We have added two Memento to the Caretaker
+//Index-0 means the First memento i.e. 42 Inch LED TV
+//Index-1 means the Second memento i.e. 46 Inch LED TV
+Console.WriteLine("\nOriginator Restoring to 42-Inch LED TV");
+originator.SetMemento(caretaker.GetMemento(0));
+Console.WriteLine("\nOrignator Current State : " + originator.GetDetails());
+
+#endregion
+
+#region observer
+//Create a Product with Out of Stock Status
+Subject RedMI = new Subject("Red MI Mobile", 10000, "Out Of Stock");
+//User Anurag will be created and the user1 object will be registered to the subject
+Observer user1 = new Observer("Anurag");
+user1.AddSubscriber(RedMI);
+//User Pranaya will be created and the user1 object will be registered to the subject
+Observer user2 = new Observer("Pranaya");
+user2.AddSubscriber(RedMI);
+//User Priyanka will be created and the user3 object will be registered to the subject
+Observer user3 = new Observer("Priyanka");
+user3.AddSubscriber(RedMI);
+Console.WriteLine("Red MI Mobile current state : " + RedMI.GetAvailability());
+Console.WriteLine();
+user3.RemoveSubscriber(RedMI);
+// Now the product is available
+RedMI.SetAvailability("Available");
+#endregion
+
+#region state design
+// Initially ATM Machine in DebitCardNotInsertedState
+ATMMachine atmMachine = new ATMMachine();
+Console.WriteLine("ATM Machine Current state : "
+                + atmMachine.AtmMachineState.GetType().Name);
+Console.WriteLine();
+atmMachine.EnterPin();
+atmMachine.WithdrawMoney();
+atmMachine.EjectDebitCard();
+atmMachine.InsertDebitCard();
+Console.WriteLine();
+// Debit Card has been inserted so the internal state of the ATM Machine
+// has been changed to DebitCardInsertedState
+Console.WriteLine("ATM Machine Current state : "
+                + atmMachine.AtmMachineState.GetType().Name);
+Console.WriteLine();
+atmMachine.EnterPin();
+atmMachine.WithdrawMoney();
+atmMachine.InsertDebitCard();
+atmMachine.EjectDebitCard();
+Console.WriteLine("");
+// Debit Card has been ejected so the internal state of the ATM Machine
+// has been changed to DebitCardNotInsertedState
+Console.WriteLine("ATM Machine Current state : "
+                + atmMachine.AtmMachineState.GetType().Name);
+#endregion
+
+#region strategy design
+// The client code picks a concrete strategy and passes it to the context. 
+// The client should be aware of the differences between strategies in order to make the right choice.
+//Create an instance of ZipCompression Strategy
+ICompression strategy = new ZipCompression();
+//Pass ZipCompression Strategy as an argument to the CompressionContext constructor
+CompressionContext ctx = new CompressionContext(strategy);
+ctx.CreateArchive("DotNetDesignPattern");
+//Changing the Strategy using SetStrategy Method
+ctx.SetStrategy(new RarCompression());
+ctx.CreateArchive("DotNetDesignPattern");
+#endregion
+
+#region template
+Console.WriteLine("Build a Concrete House\n");
+HouseTemplate houseTemplate = new ConcreteHouse();
+//Call the Template Method to Build the Concrete House
+houseTemplate.BuildHouse();
+Console.WriteLine();
+Console.WriteLine("Build a Wooden House\n");
+houseTemplate = new WoodenHouse();
+//Call the Template Method to Build the Wooden House
+houseTemplate.BuildHouse();
+
+#endregion
+
+#region vistor Design
+//Create an instance of the object structure i.e. School class
+School school = new School();
+//Create an Instance of the Visitor i.e. Doctor
+var visitor1 = new Doctor("James");
+//Call the PerformOperation Method by passing the Visitor Object which wants to Visit
+//All elements of the ObjectStructure i.e. a collection
+//Here, Doctor James will Visit all the Kids at the School
+school.PerformOperation(visitor1);
+Console.WriteLine();
+//Create an Instance of another Visitor i.e. Salesman
+var visitor2 = new Salesman("John");
+//Call the PerformOperation Method by passing the Visitor Object which wants to Visit
+//All elements of the ObjectStructure i.e. a collection
+//Here, the Salesman John will Visit all the Kids of the School
+school.PerformOperation(visitor2);
+#endregion
+
+
+/*
+ * interface IFlight{
+ * }
+ * Class 708:IFlight{
+ * }
+ * Class 812:IFlight{
+ * }
+ * Class 815:IFlight{
+ * }
+ * Interface IMediator{
+ *  
+ * }
+ * class Mediator:IMediator{
+ *  public Mediator(IFlight flightInstace){
+ *  
+ *  }
+ * }
+ * 
+ * update table
+ * 
+ * begin tran
+ * insert into table();
+ * update table
+ * commit
+ * rollback
+ * end 
+ */
