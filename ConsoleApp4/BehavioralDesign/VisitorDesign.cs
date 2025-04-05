@@ -10,7 +10,7 @@ namespace ConsoleApp4.BehavioralDesign
     // base visitor interface as an argument.
     public interface IElement
     {
-        void Accept(IVisitor visitor);
+        void Accept(IVisitor visitor); //Doc instance, salesmen
     }
 
     // The Concrete Element implements the Accept operation that takes a visitor as an argument
@@ -94,7 +94,7 @@ namespace ConsoleApp4.BehavioralDesign
             };
         }
         //The following Method Accepts the Concrete Visitor Object as a Parameter
-        public void PerformOperation(IVisitor visitor)
+        public void PerformOperation(IVisitor visitor)//Salesman
         {
             // Loop Through Each Element of the Collection or Data Structure
             foreach (var kid in Elements)
